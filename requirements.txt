@@ -1,0 +1,12 @@
+beautifulsoup4==4.12.2
+streamlit
+aiohttp
+openai
+python-docx
+pdfminer.six==20221105
+pandas
+python-dotenv
+resume-parser==0.8.4
+pdfkit==1.0.0
+spacy==2.3.5
+pymupdf
