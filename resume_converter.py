@@ -36,7 +36,7 @@ def combine_data(parsed_resume_0, parsed_resume_openai):
     data["experience"] = parsed_resume_openai["Explanation of projects"] 
     if parsed_resume_openai['Explanation of position of responsibilities'] != None:
         data["experience"]+=parsed_resume_openai['Explanation of position of responsibilities'] 
-    
+    data['educational qualification'] = parsed_resume_openai['educational qualification']
     return data
 
 def preprocess_data(data):
@@ -51,7 +51,8 @@ def preprocess_data(data):
         "{ADDRESS}": data["address"],
         "{LINKS}": data["links"],
         "{ABOUT}": data["Explanation of projects"][0],
-        "{EXPERIENCE}": data["experience"]
+        "{EXPERIENCE}": data["experience"],
+        "{EDU_QUALIFS}" : data["educational qualification"]
     }
     return html_input
 
