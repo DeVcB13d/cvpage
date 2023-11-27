@@ -1,0 +1,35 @@
+{
+  "name": "C.B.DEVNARAYAN",
+  "gmail": "devcb1313@gmail.com",
+  "phone number": "+918281269463",
+  "social media links": [
+    "https://devcb13d.github.io",
+    "https://www.linkedin.com/in/c-b-dev-narayan-79b332227/",
+    "https://github.com/devcb13d"
+  ],
+  "skillset and expertise": [
+    "Computervision",
+    "DeepLearning",
+    "NLP",
+    "Embeddedsystems",
+    "NaturalLanguageProcessing",
+    "Webdevelopment"
+  ],
+  "certifications": null,
+  "Explanation of projects": [
+    "I am an Integrated MSc (CS) student at Cochin University of Science And Technology in India. I am looking forward to working on research projects related to artificial intelligence and machine learning. I am actively working on deep learning and computer vision projects to contribute to progress in those fields.",
+    "I have worked as a research intern at Colourlab, Department of Computer Science, NTNU-Norwegian University of Science and Technology in Gjovik, Norway. I worked on computer vision projects related explicitly to self-supervised learning, detection, and tracking in colour lab in Norway. I have 2 research publications in international conferences BMVC and AIAI.",
+    "I will be working as an intern at KPIT Technologies in Kerala, India. I will be working on developing an embedded system for monitoring automobile driver drowsiness and developing an application for communication between embedded systems."
+  ],
+  "Explanation of position of responsibilities": null,
+  "years of experience": "1 year",
+  "Previous work experience description": null,
+  "educational qualification": [
+    "Integrated Master in Computer Science with specialization in Artificial Intelligence and Data Science, Cochin University of Science and Technology, India - CGPA (4 Semesters): 9.4",
+    "School SSC (2021, 12th Grade), CHINMAYA VIDYALAYA, KOLAZHY, INDIA - Percentile: 95",
+    "AISSCE (2019, 10th Grade), CHINMAYA VIDYALAYA, KOLAZHY, INDIA - Percentile: 91"
+  ],
+  "extracurriculars": null,
+  "awards and achievements": null,
+  "previous job title": null
+}

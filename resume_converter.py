@@ -33,7 +33,10 @@ def combine_data(parsed_resume_0, parsed_resume_openai):
     data["links"] = parsed_resume_0["links"]
     data["Explanation of projects"] = parsed_resume_openai["Explanation of projects"]
     # Need to change this to openai parser
-    data["experience"] = parsed_resume_0["experience"]
+    data["experience"] = parsed_resume_openai["Explanation of projects"] 
+    if parsed_resume_openai['Explanation of position of responsibilities'] != None:
+        data["experience"]+=parsed_resume_openai['Explanation of position of responsibilities'] 
+    
     return data
 
 def preprocess_data(data):
@@ -63,6 +66,8 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
     # Load the text in json
     
     # Parse the resume
+    # The line below is to debug without calling the openai API
+    # parsed_resume_openai = open("parsed_resume.txt", "r").read()
     parsed_resume_openai = parse_resume(resume_text)
     parsed_resume_openai = json.loads(parsed_resume_openai)
     # Combine the data from the two parsers

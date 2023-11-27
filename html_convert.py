@@ -111,51 +111,59 @@ def fill_resume_template(template_path, output_path, data):
                     new_link_element.string = link
                     parent_element.append(new_link_element)
         elif placeholder == "{EXPERIENCE}":
+            '''
+            The experience data is a list string 
+            '''
 
             # Convert the experience data into a list of tuples
-            exp_data_list = list(zip(
-                value['job_titles'], 
-                value['job_companies'], 
-                value['job_dates'], 
-                value['job_descriptions'])
-                )
+            # exp_data_list = list(zip(
+            #     value['job_titles'], 
+            #     value['job_companies'], 
+            #     value['job_dates'], 
+            #     value['job_descriptions'])
+            #     )
             
-            # Find the placeholder elements
+            # # Find the placeholder elements
             experience_element = soup.find(text = "{EXPERIENCE}")
             # Find the parent element of the skills placeholder
             parent_element = experience_element.find_parent()
-
+            exp_data_list = value
             # Remove the existing placeholder element
             experience_element.extract()
 
             for data in exp_data_list:
-
                 experience_list_element = soup.new_tag('li')
-
-                # Insert a new job title and date element
-                job_title_date_elem = soup.new_tag('div',{'class':'jobPosition'})
-                job_title_elem = soup.new_tag('span',{'class':'bolded'})
-                job_title_elem.string = data[0]
-                job_title_date_elem.append(job_title_elem)
-                job_date_elem = soup.new_tag('span')
-                job_date_elem.string = data[2]
-                job_title_date_elem.append(job_date_elem)
-                experience_list_element.append(job_title_date_elem)
-
-                new_job_company_element = soup.new_tag('div', {'class': "projectName bolded"} )
-                comp_element = soup.new_tag('span')
-                comp_element.string = data[1]
-                new_job_company_element.append(comp_element)
-                experience_list_element.append(new_job_company_element)
+                # Create a job description element
+                job_description_element = soup.new_tag('p')
+                job_description_element.string = data
+                experience_list_element.append(job_description_element)
+                parent_element.append(experience_list_element)
                 
 
-                new_job_description_element = soup.new_tag('div', {'class': "smallText"} )
-                desc_element = soup.new_tag('p')
-                desc_element.string = data[3]
-                new_job_description_element.append(desc_element)
-                experience_list_element.append(new_job_description_element)
+            #     # Insert a new job title and date element
+            #     job_title_date_elem = soup.new_tag('div',{'class':'jobPosition'})
+            #     job_title_elem = soup.new_tag('span',{'class':'bolded'})
+            #     job_title_elem.string = data[0]
+            #     job_title_date_elem.append(job_title_elem)
+            #     job_date_elem = soup.new_tag('span')
+            #     job_date_elem.string = data[2]
+            #     job_title_date_elem.append(job_date_elem)
+            #     experience_list_element.append(job_title_date_elem)
+
+            #     new_job_company_element = soup.new_tag('div', {'class': "projectName bolded"} )
+            #     comp_element = soup.new_tag('span')
+            #     comp_element.string = data[1]
+            #     new_job_company_element.append(comp_element)
+            #     experience_list_element.append(new_job_company_element)
+                
+
+            #     new_job_description_element = soup.new_tag('div', {'class': "smallText"} )
+            #     desc_element = soup.new_tag('p')
+            #     desc_element.string = data[3]
+            #     new_job_description_element.append(desc_element)
+            #     experience_list_element.append(new_job_description_element)
                  
-                parent_element.append(experience_list_element)               
+            #     parent_element.append(experience_list_element)               
             
         else:
             element = soup.find(text=placeholder)
