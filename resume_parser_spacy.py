@@ -20,33 +20,33 @@ TODO FIELDS:
 '''
 
 
-from resume_parser import resumeparse
+# from resume_parser import resumeparse
 import os
 import pandas as pd
-import spacy
+# import spacy
 import re
-import spacy
+# import spacy
 import nltk
 from nltk.corpus import stopwords
 import fitz 
 import io 
 from PIL import Image 
-from spacy.matcher import Matcher
-from pdfminer.converter import TextConverter
-from pdfminer.pdfinterp import PDFPageInterpreter
-from pdfminer.pdfinterp import PDFResourceManager
-from pdfminer.layout import LAParams
-from pdfminer.pdfpage import PDFPage
+# from spacy.matcher import Matcher
+# from pdfminer.converter import TextConverter
+# from pdfminer.pdfinterp import PDFPageInterpreter
+# from pdfminer.pdfinterp import PDFResourceManager
+# from pdfminer.layout import LAParams
+# from pdfminer.pdfpage import PDFPage
 import io
 
 
-spacy.cli.download('en_core_web_sm')
-nltk.download('stopwords')
-# load pre-trained model
-nlp = spacy.load('en_core_web_sm')
+# spacy.cli.download('en_core_web_sm')
+# nltk.download('stopwords')
+# # load pre-trained model
+# nlp = spacy.load('en_core_web_sm')
 
-# Grad all general stop words
-STOPWORDS = set(stopwords.words('english'))
+# # Grad all general stop words
+# STOPWORDS = set(stopwords.words('english'))
 
 '''
 Python code to process the resumes and return the following fields
@@ -91,25 +91,25 @@ def extract_text_from_pdf(pdf_path):
             fake_file_handle.close()
         
 def process(file):
-    resume_text = ''
-    # Getting resumetext to process skills
-    for page in extract_text_from_pdf(file):
-        resume_text += ' ' + page
-    # Resume text to process 
-    datatxt = resumeparse.read_file(file)
-    print(datatxt)
+    # resume_text = ''
+    # # Getting resumetext to process skills
+    # for page in extract_text_from_pdf(file):
+    #     resume_text += ' ' + page
+    # # Resume text to process 
+    # datatxt = resumeparse.read_file(file)
+    # print(datatxt)
     extract = {}
-    extract["name"] = extract_name(resume_text)
-    extract["email"] = datatxt["email"]
-    extract["phone"] = datatxt["phone"]
-    extract["designition"] = datatxt["designition"]
-    extract["skills"] = process_skills(resume_text)
-    extract["education"] = extract_education(resume_text)
+    # extract["name"] = extract_name(resume_text)
+    # extract["email"] = datatxt["email"]
+    # extract["phone"] = datatxt["phone"]
+    # extract["designition"] = datatxt["designition"]
+    # extract["skills"] = process_skills(resume_text)
+    # extract["education"] = extract_education(resume_text)
     extract["photo_path"] = extract_photo(file)
-    extract["experience"] = extract_experience(resume_text)
-    extract["links"] = extract_links(resume_text)
-    extract["address"] = extract_address(resume_text)
-    extract["about"] = extract_about(resume_text)
+    # extract["experience"] = extract_experience(resume_text)
+    # extract["links"] = extract_links(resume_text)
+    # extract["address"] = extract_address(resume_text)
+    # extract["about"] = extract_about(resume_text)
 
     return extract
 

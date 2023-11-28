@@ -28,9 +28,6 @@ if st.button('Create Resumes') and uploaded_files:
             parsed_resume_path = resume_convert(uploaded_file_path, f"results/Generated_Resume_{uploaded_file.name}.html",uploaded_file)
 
             # opening the file 
-
-            with open(parsed_resume_path,"r") as file:
-                st.download_button('Resume Download', file, file_name='Resume.pdf')
             
             st.sidebar.write('Template resume downloaded!')
             # json_resume = re.sub(r'[^\x20-\x7E]', '', parsed_resume).replace("\n", "\\n").replace("\t", "\\t").replace("\r", "\\r")

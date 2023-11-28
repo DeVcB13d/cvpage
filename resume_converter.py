@@ -17,20 +17,18 @@ it compatible with the HTML template
 
 
 # Combine the data from the two parsers
-def combine_data(parsed_resume_0, parsed_resume_openai):
-    print(parsed_resume_openai)
-        
+def combine_data(parsed_resume_0, parsed_resume_openai):        
     data = {}
     data["name"] = parsed_resume_openai["name"]
     data["gmail"] = parsed_resume_openai["gmail"]
     data["phone number"] = parsed_resume_openai["phone number"]
     data["skillset and expertise"] = parsed_resume_openai["skillset and expertise"]
-    data["education"] = parsed_resume_0["education"]
     data["photo_path"] = parsed_resume_0["photo_path"]
     # Need to change this to openai parser
-    data["designition"] = parsed_resume_0["designition"]
-    data["address"] = parsed_resume_0["address"]
-    data["links"] = parsed_resume_0["links"]
+    data["designition"] = parsed_resume_openai["previous job title"]
+    data["address"] = parsed_resume_openai["address"]
+    data["links"] = parsed_resume_openai["social media links"]
+    data["about"] = parsed_resume_openai["about"]
     data["Explanation of projects"] = parsed_resume_openai["Explanation of projects"]
     # Need to change this to openai parser
     data["experience"] = parsed_resume_openai["Explanation of projects"] 
@@ -45,12 +43,11 @@ def preprocess_data(data):
         "{EMAIL}": data["gmail"],
         "{PHONE}": data["phone number"],
         "{SKILLS}": data["skillset and expertise"],
-        "{EDUCATION}": data["education"],
         "{IMAGE}": data["photo_path"],
         "{DESIGNATION}": data["designition"],
         "{ADDRESS}": data["address"],
         "{LINKS}": data["links"],
-        "{ABOUT}": data["Explanation of projects"][0],
+        "{ABOUT}": data["about"],
         "{EXPERIENCE}": data["experience"],
         "{EDU_QUALIFS}" : data["educational qualification"]
     }
@@ -68,11 +65,15 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
     
     # Parse the resume
     # The line below is to debug without calling the openai API
-    # parsed_resume_openai = open("parsed_resume.txt", "r").read()
-    parsed_resume_openai = parse_resume(resume_text)
+    parsed_resume_openai = open("parsed_data.txt", "r").read()
+    #parsed_resume_openai = parse_resume(resume_text)
     parsed_resume_openai = json.loads(parsed_resume_openai)
     # Combine the data from the two parsers
     data = combine_data(parsed_resume_0, parsed_resume_openai)
+
+    # # save the combined data
+    # with open('parsed_data.txt','w') as f:
+    #     f.write(str(data))
 
     # Preprocess the data
     data = preprocess_data(data)
@@ -89,9 +90,20 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
 
     output_pdf_path = output_resume_path.replace("html", "pdf")
 
-    pdfkit.from_file(output_resume_path, output_pdf_path, verbose=True, options={"enable-local-file-access": True})
+    pdf_options = {
+        "enable-local-file-access": True,
+        'page-size': 'A4',
+        'margin-top': '0mm',
+        'margin-right': '0mm',
+        'margin-bottom': '0mm',
+        'margin-left': '0mm',
+        'zoom' : 2,
 
-    return output_resume_path
+    }
+
+    pdfkit.from_file(output_resume_path, output_pdf_path, verbose=True, options=pdf_options)
+
+    return output_pdf_path
 
 
 def test():

@@ -1,0 +1,55 @@
+{
+    "name": "Abhin P.T",
+    "gmail": "abhinajith40@gmail.com",
+    "phone number": "+918921013039",
+    "skillset and expertise": [
+      "Effective communication and teamwork",
+      "Time management and organization",
+      "Adaptability and willingness to learn"
+    ],
+    "photo_path": "images/image_AbhinCV__3.png",
+    "designition": [
+      "AI & ML Intern",
+      "Freelance Flutter Developer"
+    ],
+    "address": null,
+    "social media links": [
+      "LinkedIn: abhin-p-t-",
+      "GitHub: abhin2002"
+    ],
+    "about": "I am a passionate AI & ML enthusiast with experience in various technology stacks and libraries, specializing in projects related to computer vision and deep learning. I am also skilled in Flutter development. I am currently pursuing an Integrated MSc in Computer Science with a specialization in AI & Data Science at Cochin University of Science and Technology, India.",
+    "Explanation of projects": [
+      "Traffic Sign Detection Model - Developed a robust traffic sign detection model using the YOLOv5 architecture. This project aimed to enhance road safety by accurately identifying and classifying traffic signs in real-time.",
+      "Sign Background Removal Model - Developed a sophisticated Sign Background Removal Model based on the UNet architecture, enabling the automatic extraction of signs from complex backgrounds in images.",
+      "EmptyBin-MAGNATHON - Built a supervised machine learning model, trained using a general Dataset regarding the demand for food which can predict the quantity of food required for a given set of variables.",
+      "Crop Recommendation Model - A machine learning model to analyze soil parameters and recommend suitable crops. It uses Logistic Regression to predict crops.",
+      "Waste-Management-aided-by-image-analysis - Capacity Monitoring of Waste containers using Image-based data.",
+      "E-Commerce site for Visually impaired people - E-commerce platform for individuals with disabilities that aims to empower them with the choice of services they need using the MERN architecture.",
+      "VIBES-Employee Management App - Flutter-based mobile application comprising both user and admin versions to streamline employee attendance tracking, payroll management, and car information tracking.",
+      "Interactive Website for Sales Data Analysis - Website in python to Analyze Sales Data using streamlit, the website provided facility to visualize and analyze thousands of sales data",
+      "Project Allocation System - Software to allocate projects and mentors to students based on their field of expertise and interest using JAVA.",
+      "AI & ML Intern at PixDynamics Infopark, Kochi, India - Assisted in data preparation, conducted in-depth research on noise removal from signatures, utilized various technology stacks and libraries including PyTorch, YOLOv5, Probabilistic Diffusion models, Stable Diffusion models, UNET, and GAN models.",
+      "Freelance Flutter Developer at Vibes Communication, Kerala, India - Developed a Flutter app to monitor employee information, performed CRUD actions on attendance, salary, and automobile usage, provided a user-friendly app with admin and user versions. Utilized Dart, Git, Flutter, and Google Sheets API."
+    ],
+    "experience": [
+      "Traffic Sign Detection Model - Developed a robust traffic sign detection model using the YOLOv5 architecture. This project aimed to enhance road safety by accurately identifying and classifying traffic signs in real-time.",
+      "Sign Background Removal Model - Developed a sophisticated Sign Background Removal Model based on the UNet architecture, enabling the automatic extraction of signs from complex backgrounds in images.",
+      "EmptyBin-MAGNATHON - Built a supervised machine learning model, trained using a general Dataset regarding the demand for food which can predict the quantity of food required for a given set of variables.",
+      "Crop Recommendation Model - A machine learning model to analyze soil parameters and recommend suitable crops. It uses Logistic Regression to predict crops.",
+      "Waste-Management-aided-by-image-analysis - Capacity Monitoring of Waste containers using Image-based data.",
+      "E-Commerce site for Visually impaired people - E-commerce platform for individuals with disabilities that aims to empower them with the choice of services they need using the MERN architecture.",
+      "VIBES-Employee Management App - Flutter-based mobile application comprising both user and admin versions to streamline employee attendance tracking, payroll management, and car information tracking.",
+      "Interactive Website for Sales Data Analysis - Website in python to Analyze Sales Data using streamlit, the website provided facility to visualize and analyze thousands of sales data",
+      "Project Allocation System - Software to allocate projects and mentors to students based on their field of expertise and interest using JAVA.",
+      "AI & ML Intern at PixDynamics Infopark, Kochi, India - Assisted in data preparation, conducted in-depth research on noise removal from signatures, utilized various technology stacks and libraries including PyTorch, YOLOv5, Probabilistic Diffusion models, Stable Diffusion models, UNET, and GAN models.",
+      "Freelance Flutter Developer at Vibes Communication, Kerala, India - Developed a Flutter app to monitor employee information, performed CRUD actions on attendance, salary, and automobile usage, provided a user-friendly app with admin and user versions. Utilized Dart, Git, Flutter, and Google Sheets API."
+    ],
+    "educational qualification": [
+      "Present - Integrated Msc Computer Science, AI & DS, Cochin University of Science and Technology, India",
+      "2020 - Higher Secondary Education, Science, Government Higher Secondary School Kuttiady, Kerala, India",
+      "2018 - Secondary School Education, Sanskrit High School Vattoli, Kerala, India"
+    ],
+    "Explanation of position of responsibilities" : null,
+    "previous job title" : ["Engineer"]
+  }
+  

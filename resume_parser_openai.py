@@ -94,6 +94,7 @@ system1='''You are an excellent NLP engineer, skilled talent recruiter and data 
         'name': string,
         'gmail': string,
         'phone number' : string,
+        'address' : string
         'social media links': list of string,
         If value of a key is missing in the resume then value should be null.
         If not a resume then all the key's value should be null.
@@ -106,6 +107,7 @@ system2='''You are an excellent NLP engineer, skilled talent recruiter and data 
         Step-1:
         Analyse and parse the following information from the candidate's resume, do not just extract the data, rephrase it meaningfully;
         return the meaningful parsed data in a sturctured JSON format with key and corresponding value format as follows-
+        'about': string under 200 tokens
         'skillset and expertise': list of string,
         'certifications': list of string,
         'Explanation of projects': list of string under 200 tokens,
@@ -178,7 +180,7 @@ def process_responses(responses):
 def get_choice_text_from_prompt(messages):
     try:
         
-        response = openai.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo-16k",
             messages=messages,
             temperature=0,
@@ -206,7 +208,7 @@ def parse_resume(resumetext):
 
         Step-1:
         Analyse and parse the following information from the candidate's resume, do not just extract the data, rephrase it meaningfully:
-        name, gmail, phone number, social media links, skillset and expertise, certifications, Explanation of projects,
+        name, gmail, phone number, address, social media links, about, skillset and expertise, certifications, Explanation of projects,
         Explanation of position of responsibilities, years of work experience in years and its explanation mentioning the job roles,
         Previous work experience description, educational qualification,
         extracurriculars,awards and achievements, previous job title.
@@ -218,7 +220,9 @@ def parse_resume(resumetext):
         'name': string,
         'gmail': string,
         'phone number' : string,
+        'address' : string
         'social media links': list of string,
+        'about': string under 200 tokens
         'skillset and expertise': list of string,
         'certifications': list of string,
         'Explanation of projects': list of string under 200 tokens,

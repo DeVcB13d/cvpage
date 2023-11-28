@@ -56,20 +56,6 @@ def fill_resume_template(template_path, output_path, data):
 
             # Remove the existing placeholder element
             element.extract()
-        elif placeholder == "{EDUCATION}" and len(value) > 0:
-            element = soup.find(text=placeholder)
-            # Find the parent element of the skills placeholder
-            parent_element = element.find_parent()
-
-            for edu in value:
-                if type(edu) == tuple:
-                    new_edu_element = soup.new_tag('li')
-                    new_edu_element.string = edu[0] + " " + edu[1]
-                    parent_element.append(new_edu_element)
-                else:
-                    new_edu_element = soup.new_tag('li')
-                    new_edu_element.string = edu
-                    parent_element.append(new_edu_element)
 
             # Remove the existing placeholder element
             element.extract()
@@ -97,6 +83,10 @@ def fill_resume_template(template_path, output_path, data):
                         new_skill_element = soup.new_tag('h3')
                         new_skill_element.string = desg
                         parent_element.append(new_skill_element)
+                else:
+                    new_skill_element = soup.new_tag('h3')
+                    new_skill_element.string = "Job seeker"
+                    parent_element.append(new_skill_element)
         elif placeholder == "{LINKS}":
             element = soup.find(text=placeholder)
             # Find the parent element of the skills placeholder
@@ -110,6 +100,11 @@ def fill_resume_template(template_path, output_path, data):
                     new_link_element = soup.new_tag('p', style='font-size: 10px;')
                     new_link_element.string = link
                     parent_element.append(new_link_element)
+            else:
+                new_link_element = soup.new_tag('p', style='font-size: 10px;')
+                new_link_element.string = 'None'
+                parent_element.append(new_link_element)
+
         elif placeholder == "{EXPERIENCE}":
             '''
             The experience data is a list string 
