@@ -1,6 +1,6 @@
 beautifulsoup4==4.12.2
 aiohttp
-openaiopenai==0.28
+openaiopenai
 python-docx
 pdfminer.six==20221105
 pandas

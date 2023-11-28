@@ -177,7 +177,8 @@ def process_responses(responses):
 ## OpenAI api call
 def get_choice_text_from_prompt(messages):
     try:
-        response = openai.ChatCompletion.create(
+        
+        response = openai.chat.completions.create(
             model="gpt-3.5-turbo-16k",
             messages=messages,
             temperature=0,

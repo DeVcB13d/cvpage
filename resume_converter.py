@@ -91,7 +91,7 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
 
     pdfkit.from_file(output_resume_path, output_pdf_path, verbose=True, options={"enable-local-file-access": True})
 
-    return parsed_resume_openai
+    return output_resume_path
 
 
 def test():
