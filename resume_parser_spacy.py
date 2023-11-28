@@ -26,6 +26,7 @@ import pandas as pd
 import spacy
 import re
 import spacy
+import nltk
 from nltk.corpus import stopwords
 import fitz 
 import io 
@@ -39,6 +40,8 @@ from pdfminer.pdfpage import PDFPage
 import io
 
 
+spacy.cli.download('en_core_web_sm')
+nltk.download('stopwords')
 # load pre-trained model
 nlp = spacy.load('en_core_web_sm')
 
