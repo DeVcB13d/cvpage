@@ -37,44 +37,66 @@ def combine_data(parsed_resume_0, parsed_resume_openai):
     data['educational qualification'] = parsed_resume_openai['educational qualification']
     return data
 
+# def preprocess_data(data):
+#     html_input = {
+#         "{NAME}": data["name"],
+#         "{EMAIL}": data["gmail"],
+#         "{PHONE}": data["phone number"],
+#         "{SKILLS}": data["skillset and expertise"],
+#         "{IMAGE}": data["photo_path"],
+#         "{DESIGNATION}": data["designition"],
+#         "{ADDRESS}": data["address"],
+#         "{LINKS}": data["links"],
+#         "{ABOUT}": data["about"],
+#         "{EXPERIENCE}": data["experience"],
+#         "{EDU_QUALIFS}" : data["educational qualification"]
+#     }
+#     return html_input
+
+'''
+Preprocess the data from the processed user data to be sent to the HTML template
+'''
 def preprocess_data(data):
     html_input = {
-        "{NAME}": data["name"],
-        "{EMAIL}": data["gmail"],
-        "{PHONE}": data["phone number"],
-        "{SKILLS}": data["skillset and expertise"],
-        "{IMAGE}": data["photo_path"],
-        "{DESIGNATION}": data["designition"],
-        "{ADDRESS}": data["address"],
-        "{LINKS}": data["links"],
-        "{ABOUT}": data["about"],
-        "{EXPERIENCE}": data["experience"],
-        "{EDU_QUALIFS}" : data["educational qualification"]
+        "{NAME}": data["Name"],
+        "{EXPERIENCE}": data["Previous work experience description"],
+        "{EDU_QUALIFS}" : data["educational qualification"],
+        "{YEARS_OF_EXPERIENCE}": data["years of experience"], 
+        "{ACHIEVEMENTS}": data["awards and achievements"],
+        "{CONTACT}": data["emails"] + data["phone_number"],
+        "{CERTIFICATIONS}": data["certifications"],
+        "{EXCS}":data["extracurriculars"],
+        "{LINKS}":data["links"],
+        "{SKILLS}":data["skillset and expertise"]
+
     }
     return html_input
+
 
 def resume_convert(input_resume_path, output_resume_path, input_resume=None):
 
     # Process the input resume
     # This partially does the parsing by using the resume parser library
-    parsed_resume_0 = process(input_resume_path)
-    # Convert to text
-    resume_text = convert_files_to_text(input_resume)
-    resume_text = truncate_text_by_words(resume_text)
-    # Load the text in json
+    # parsed_resume_0 = process(input_resume_path)
+    # # Convert to text
+    # resume_text = convert_files_to_text(input_resume)
+    # resume_text = truncate_text_by_words(resume_text)
+    # # Load the text in json
     
-    # Parse the resume
-    # The line below is to debug without calling the openai API
-    parsed_resume_openai = open("parsed_data.txt", "r").read()
-    #parsed_resume_openai = parse_resume(resume_text)
-    parsed_resume_openai = json.loads(parsed_resume_openai)
-    # Combine the data from the two parsers
-    data = combine_data(parsed_resume_0, parsed_resume_openai)
+    # # Parse the resume
+    # # The line below is to debug without calling the openai API
+    # parsed_resume_openai = open("parsed_data.txt", "r").read()
+    # #parsed_resume_openai = parse_resume(resume_text)
+    # parsed_resume_openai = json.loads(parsed_resume_openai)
+    # # Combine the data from the two parsers
+    # data = combine_data(parsed_resume_0, parsed_resume_openai)
 
     # # save the combined data
     # with open('parsed_data.txt','w') as f:
     #     f.write(str(data))
-
+    
+    data = json.load(open('a.json','r'))
+    print(data)
     # Preprocess the data
     data = preprocess_data(data)
 
@@ -82,7 +104,7 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
     print(data)
 
     # Path to the resume template
-    template_path = "./standard/standard.html"
+    template_path = "./standard/resume.html"
 
     # Fill the resume template with the data
     fill_resume_template(template_path, output_resume_path, data)
@@ -107,11 +129,11 @@ def resume_convert(input_resume_path, output_resume_path, input_resume=None):
 
 
 def test():
-    resumes_dir = "./data"
-    for res in os.listdir(resumes_dir):
-        name = os.path.splitext(res)[0]
-        print("Converting {0} to {1}.html".format(res, name))
-        resume_convert(os.path.join(resumes_dir,res), "results/{0}.html".format(name))
+    # resumes_dir = "./data"
+    # for res in os.listdir(resumes_dir):
+    #     name = os.path.splitext(res)[0]
+    #     print("Converting {0} to {1}.html".format(res, name))
+    resume_convert('./data/AbhinCV__3.pdf', "results/test.html")
 
 
 if __name__ == "__main__":

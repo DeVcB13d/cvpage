@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h1 {
+
+        font-size: 30px;
+        font-family: sans-serif;
+    }
+
+    .container {
+        padding: 100px;
+    }
+    .horizontalgap {
+        float: left;
+        overflow: hidden;
+        height: 1px;
+        width: 0px;
+    }
+    .content {
+        flex-grow: 1;
+    }
+
+    .image img {
+        max-width: 100px;  /* Ensure the image doesn't exceed the container width */
+        height: auto;     /* Maintain the image's aspect ratio */
+        margin-left: 20px;  /* Adjust the margin as needed for spacing */
+        align-items: left;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Resume</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="images/logo.jpg" alt="Profile Image",align = "right">
+        </div>
+        <div class="content">
+            <h1 role="presentation" dir="ltr" class="name">{NAME}</h1>
+            <h4>{YEARS_OF_EXPERIENCE}</h4>
+        </div>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="education">EXPERIENCE</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <ul>{EXPERIENCE}</ul>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="education">EDUCATION</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <ul>{EDU_QUALIFS}</ul>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="experience">ACHIEVEMENTS</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <ul>{ACHIEVEMENTS}</ul>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="experience">
+                EXTRA-
+                CURRICULARS
+            </div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <ul>{EXCS}</ul>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+        </div>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="experience">CERTIFICATIONS</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <ul>{CERTIFICATIONS}</ul>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="experience">SKILLS</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li style="margin-right: 20px;">{SKILLS}</li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="contact">LINKS</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li style="margin-right: 20px;">{LINKS}</li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <hr>
+        <div style="display: flex; align-items: center; ">
+            <div style="margin-right: 100px;" class="contact">CONTACT</div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li style="margin-right: 20px;">{CONTACT}</li>
+                </ul>
+            </div>
+            <hr>
+
+            <hr>
+        </div>
+</body>
+
+</html>
